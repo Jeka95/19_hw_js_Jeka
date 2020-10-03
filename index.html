@@ -6,25 +6,38 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<title>JS HomeWork 18 </title>
+	<title>JS HomeWork 19 </title>
 </head>
 
 <body>
 
-
 	<div class="form">
-		<form action="">
-			<span class="login">Login</span>
-			<input type="text" class="login_input">
-			<span class="paswword">paswword</span>
-			<input type="text" class="paswword_input">
-			<span class="email">Email</span>
-			<input type="text" class="email_input">
-			<input type="button" value="Add user">
-		</form>
+		<div class="form_inpute">
+			<form action="" class="form_form">
+				<span class="login">Login</span>
+				<input type="text" class="login_input" placeholder="Enter login">
+				<span class="paswword">Paswword</span>
+				<input type="password" class="paswword_input" placeholder="Enter paswword">
+				<span class="email">Email adress</span>
+				<input type="email" class="email_input" placeholder="Enter email">
+				<input class="btn" type="button" value="Add user">
+			</form>
+		</div>
+		<div class="form_result">
+			<div class="list">
+				<span>#</span>
+				<span>Login</span>
+				<span>Paswword</span>
+				<span>Email</span>
+				<span>Edit</span>
+				<span>Delete</span>
+				<div class="table">
+					<table id="table">
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="form_result"></div>
-
 
 	<script src="JS/main.js"></script>
 

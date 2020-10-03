@@ -1,0 +1,96 @@
+.form {
+   display: flex;
+   justify-content: space-around;
+}
+.form_inpute {
+}
+.form_form {
+   display: flex;
+   flex-direction: column;
+}
+.login {
+   margin: 10px 0;
+}
+.login_input {
+   width: 500px;
+   height: 50px;
+   border-radius: 10px;
+}
+.paswword {
+   margin: 10px 0;
+}
+.paswword_input {
+   width: 500px;
+   height: 50px;
+   border-radius: 10px;
+}
+.email {
+   margin: 10px 0;
+}
+.email_input {
+   width: 500px;
+   height: 50px;
+   border-radius: 10px;
+   margin-bottom: 20px;
+}
+.btn {
+   float: left;
+   height: 40px;
+   width: 100px;
+   border-radius: 10px;
+   background-color: #fff;
+   color: chartreuse;
+   border: 2px solid chartreuse;
+}
+.form_result {
+}
+.form_result span {
+   display: inline-block;
+   margin: 20px;
+}
+.list {
+   font-size: 20px;
+   font-weight: bold;
+   border-top: 3px solid grey;
+   border-bottom: 3px solid grey;
+}
+.table {
+   margin-left: 12px;
+}
+.number {
+   border: 1px solid #000;
+   width: 20px;
+   height: 20px;
+   text-align: center;
+}
+.input_list {
+   border: 1px solid #000;
+   height: 20px;
+   width: 110px;
+   text-align: center;
+}
+
+.edit_list {
+   border: 1px solid #000;
+   width: 50px;
+   padding-left: 10px;
+}
+.delete_list {
+   border: 1px solid #000;
+   width: 50px;
+   padding: 0 25px;
+}
+.edit {
+   width: 50px;
+   height: 40px;
+   background-color: orange;
+   color: #000;
+   border-radius: 5px;
+}
+.delete {
+   width: 60px;
+   height: 40px;
+   background-color: red;
+   color: #fff;
+   border-radius: 5px;
+}
