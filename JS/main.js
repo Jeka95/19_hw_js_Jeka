@@ -38,6 +38,7 @@ let table = document.querySelector("#table")
 function render(table, arr) {
   for (let i = 0; i < arr.length; i++) {
     let tr = document.createElement('tr');
+
     let td1 = document.createElement('td');
     td1.className = "number";
     td1.innerHTML = i + 1;
@@ -48,16 +49,70 @@ function render(table, arr) {
       td.innerHTML = arr[i][key];
       tr.appendChild(td);
     }
-    let td5 = document.createElement('td');
-    td5.className = "edit_list"
-    let td6 = document.createElement('td');
-    td6.className = "delete_list";
-    td5.innerHTML = "<input type='button' class='edit' value='Edit'> ";
+    let td5 = document.createElement('input');
+    td5.className = "edit_list edit"
+    td5.type = "button";
+    td5.value = "Edit"
+    let td6 = document.createElement('input');
+    td6.className = "delete_list delete";
+    // td5.innerHTML = "<input type='button' class='edit' value='Edit'> ";
     td5.id = "indexedit" + `${i + 1}`;
-    td6.innerHTML = "<input type='button' class='delete' value='Delete'>";
+    // td6.innerHTML = "type='button' class='delete' value='Delete'>";
     td6.id = "indexdelete" + `${i + 1}`;
+    td6.type = "button";
+    td6.value = "Delete"
+
     tr.appendChild(td5);
     tr.appendChild(td6);
     table.appendChild(tr);
   }
+}
+
+
+
+table.addEventListener("click", function () {
+
+  if (event.target.value == "Delete") {
+    deleteUser();
+    console.log("delete");
+  } else if (event.target.value == "Edit") {
+    editUser();
+    console.log("edit");
+  }
+  else {
+    event.preventDefault();
+  }
+
+
+})
+
+function deleteUser() {
+  console.log(event.target.id);
+  let index = parseInt(event.target.id.match(/\d+/))
+  console.log(index);
+  personlist.splice(index - 1, 1);
+  table.innerHTML = "";
+  render(table, personlist);
+}
+
+function editUser() {
+  console.log(event.target.id);
+  let index = parseInt(event.target.id.match(/\d+/))
+  console.log(index);
+
+  document.querySelector(".login_input").value = personlist[index - 1].login;
+  document.querySelector(".paswword_input").value = personlist[index - 1].password;
+  document.querySelector(".email_input").value = personlist[index - 1].email;
+  adduser.value = "Edit user";
+  adduser.addEventListener("click", function () {
+    personlist[index - 1].login = "OOOO";
+    // personlist[index - 1].password = querySelector(".paswword_input").value;
+    // personlist[index - 1].email =document.querySelector(".email_input").value;
+    document.querySelector(".login_input").value = "";
+    document.querySelector(".paswword_input").value = "";
+    document.querySelector(".email_input").value = "";
+    adduser.value = "Add user";
+    table.innerHTML = "";
+    render(table, personlist);
+  });
 }
