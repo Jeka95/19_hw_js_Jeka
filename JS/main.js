@@ -105,9 +105,9 @@ function editUser() {
   document.querySelector(".email_input").value = personlist[index - 1].email;
   adduser.value = "Edit user";
   adduser.addEventListener("click", function () {
-    personlist[index - 1].login = "OOOO";
-    // personlist[index - 1].password = querySelector(".paswword_input").value;
-    // personlist[index - 1].email =document.querySelector(".email_input").value;
+    personlist[index - 1].login = document.querySelector(".login_input").value;
+    personlist[index - 1].password = document.querySelector(".paswword_input").value;
+    personlist[index - 1].email = document.querySelector(".email_input").value;
     document.querySelector(".login_input").value = "";
     document.querySelector(".paswword_input").value = "";
     document.querySelector(".email_input").value = "";
