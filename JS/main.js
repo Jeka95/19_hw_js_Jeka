@@ -2,7 +2,8 @@ let deleteuser;
 window.addEventListener("input", function (event) {
   inputChecker(event);
 });
-let adduser = document.querySelector(".btn")
+let edituser = document.querySelector(".btnedit")
+let adduser = document.querySelector(".btn");
 adduser.addEventListener("click", addUser);
 function inputChecker(event) {
   let type = {
@@ -99,20 +100,23 @@ function editUser() {
   console.log(event.target.id);
   let index = parseInt(event.target.id.match(/\d+/))
   console.log(index);
-
   document.querySelector(".login_input").value = personlist[index - 1].login;
   document.querySelector(".paswword_input").value = personlist[index - 1].password;
   document.querySelector(".email_input").value = personlist[index - 1].email;
-  adduser.value = "Edit user";
-  adduser.addEventListener("click", function () {
+  edituser.style.display = "block";
+  adduser.style.display = "none";
+
+  edituser.addEventListener("click", function () {
     personlist[index - 1].login = document.querySelector(".login_input").value;
     personlist[index - 1].password = document.querySelector(".paswword_input").value;
     personlist[index - 1].email = document.querySelector(".email_input").value;
     document.querySelector(".login_input").value = "";
     document.querySelector(".paswword_input").value = "";
     document.querySelector(".email_input").value = "";
-    adduser.value = "Add user";
     table.innerHTML = "";
     render(table, personlist);
+    edituser.style.display = "none";
+    adduser.style.display = "block";
+
   });
 }

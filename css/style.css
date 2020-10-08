@@ -42,6 +42,16 @@
    color: chartreuse;
    border: 2px solid chartreuse;
 }
+.btnedit {
+   float: left;
+   height: 40px;
+   width: 100px;
+   border-radius: 10px;
+   background-color: #fff;
+   color: chartreuse;
+   border: 2px solid chartreuse;
+   display: none;
+}
 .form_result {
 }
 .form_result span {
